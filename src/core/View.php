@@ -13,12 +13,12 @@ class View {
     public function render($title, $vars = []) {
         extract($vars);
 
-        if (file_exists($path = 'src/App/views/'.$this->path.'.php')) {
+        if (file_exists($path = '../src/views/'.$this->path.'.php')) {
             ob_start();
             require $path;
             $content = ob_get_clean();
 
-            require 'src/App/views/layouts/'.$this->layout.'.php';
+            require '../src/views/layouts/'.$this->layout.'.php';
         } else {
             self::errorCode();
         }
@@ -27,7 +27,7 @@ class View {
     static function errorCode($code = 404) {
         http_response_code($code);
 
-        if (file_exists($path = 'src/App/views/errors/'.$code.'.php')) {
+        if (file_exists($path = '../src/views/errors/'.$code.'.php')) {
             require $path;
         }
         exit();

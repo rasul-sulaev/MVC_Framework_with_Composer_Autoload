@@ -2,9 +2,9 @@
 
 namespace App;
 
-require "src\App\lib\Dev.php";
+require "../src/lib/Dev.php";
 
-require __DIR__.'/vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use App\core\Router;
 

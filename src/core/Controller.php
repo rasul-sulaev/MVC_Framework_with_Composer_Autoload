@@ -26,7 +26,7 @@ abstract class Controller {
     }
 
     public function checkAcl() {
-        if (file_exists($path = 'src\App\acl\\'.$this->route['controller'].'.php')) {
+        if (file_exists($path = '..\src\acl\\'.$this->route['controller'].'.php')) {
             $this->acl = require $path;
 
             if ($this->actionIsAcl('all')) {
